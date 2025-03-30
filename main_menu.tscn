@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkuemgcnw7ty"]
+
+[ext_resource type="Script" uid="uid://bm8u0n5ubqf3t" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://brq7b7run6cws" path="res://player.tscn" id="2_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://o82kjfiglibx" path="res://enemy2.tscn" id="3_fu7sn"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_fu7sn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "My Cool Game"
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_7vrkn")]
+exclusive = true
+popup_window = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 783.0
+offset_top = 26.0
+offset_right = 1114.0
+offset_bottom = 119.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 798.0
+offset_top = 142.0
+offset_right = 1129.0
+offset_bottom = 235.0
+
+[node name="Enemy" parent="." instance=ExtResource("3_fu7sn")]

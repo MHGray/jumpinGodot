@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://o82kjfiglibx"]
+
+[ext_resource type="Script" uid="uid://u2esir8wcqyj" path="res://enemy.gd" id="1_jugo2"]
+[ext_resource type="Texture2D" uid="uid://b5bmby68k3yqt" path="res://icon.svg" id="2_b3jlp"]
+
+[node name="Enemy" type="Window"]
+auto_translate_mode = 1
+transparent_bg = true
+position = Vector2i(200, 200)
+size = Vector2i(128, 128)
+borderless = true
+always_on_top = true
+transparent = true
+mouse_passthrough = true
+script = ExtResource("1_jugo2")
+speed = 150.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.685897, 0.0431827, 5.77569e-07, 1)
+position = Vector2(64, 64)
+texture = ExtResource("2_b3jlp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
